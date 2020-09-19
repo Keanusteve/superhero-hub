@@ -1,0 +1,14 @@
+.character-details{
+    border:1px solid black;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:10px;
+    margin-bottom: 10px;;
+}
+
+.character-image {
+    width:200px;
+
+}

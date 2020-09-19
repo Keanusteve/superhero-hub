@@ -1,0 +1,14 @@
+[
+    {
+        "value": "all",
+        "label": "All"
+    },
+    {
+        "value": "hero",
+        "label": "Hero"
+    },
+    {
+        "value": "villian",
+        "label": "Villian"
+    }
+]

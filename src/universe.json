@@ -1,0 +1,14 @@
+[
+    {
+        "value": "all",
+        "label": "All"
+    },
+    {
+        "value": "marvel",
+        "label": "Marvel"
+    },
+    {
+        "value": "dc",
+        "label": "DC"
+    }
+]
