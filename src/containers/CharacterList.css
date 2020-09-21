@@ -2,6 +2,13 @@
 margin: 10px;
    display:flex;
    flex-wrap: wrap;
+   flex-direction: row;
    justify-content: space-evenly;
-   display: flex;
+   
+   
 }   
+.character-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

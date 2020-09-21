@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import CharacterList from "./containers/CharacterList";
-import { getCharacters, createCharacter, updateCharacter } from "./CharactersService";
+import { getCharacters, createCharacter, updateCharacter, deleteCharacter } from "./CharactersService";
 import AddEditCharacterForm from "./components/AddEditCharacterForm";
 
 import Character from "./components/Character";
@@ -15,40 +15,12 @@ function App() {
     setCurrentCharacter(null);
     //todo: scroll to bottom of page""javascript programatically scroll to bottom of page"
   }
- 
   
 
   const [characters, setCharacters] = React.useState(() => {
     fetchCharacters();
 
-    return [
-      {
-        _id: "5f602db5ac73c47e180834e7",
-        name: "Superman",
-        strength: 9000,
-        durability: 9000,
-        speed: 9000,
-        power_level: 9500,
-        fighting_skill: 6000,
-        xfactor: 2000,
-        alignment: "Hero",
-        universe: "DC",
-        imageUrl: "Superman.jpg",
-      },
-      {
-        _id: "",
-        name: "Hulk",
-        strength: 9000,
-        durability: 9000,
-        speed: 7000,
-        power_level: 9500,
-        fighting_skill: 5000,
-        xfactor: 7000,
-        alignment: "Hero",
-        universe: "Marvel",
-        imageUrl: "Hulk.jpg",
-      },
-    ];
+    return [ ];
   });
 
   function fetchCharacters() {
@@ -63,10 +35,10 @@ function App() {
   }
 
   function handleCreateCharacter(character) {
-    createCharacter(character)
+       createCharacter(character)
       .then((response) => {
        setCurrentCharacter(null);
-        alert("SUCCESSFULLY CREATE NEW CHARACTER");
+        alert("SUCCESSFULLY CREATED NEW CHARACTER");
         fetchCharacters();
       })
       .catch((error) => {
@@ -81,6 +53,7 @@ function App() {
   }
 
   function handleUpdateCharacter(character){
+    debugger
     updateCharacter(character._id, character)
     .then((response) => {
       setCurrentCharacter(null);
@@ -91,21 +64,52 @@ function App() {
         alert(error);
       });
     }
+
+    function handleDeleteCharacter(character){
+    deleteCharacter(character._id)
+    .then((respones) => {
+      alert("SUCESSFULLY DELETED CHARACTER");
+      fetchCharacters();
+    })
+      .catch((errors) => {
+        alert(errors);
+      });
+    }
+
+
+
+
   return (
     //CharacterList is creating an instance of character list
 
     <div className="App">
-      <h1> SUPERHERO CENTRAL</h1>
+     
+      <div className="emptyspace"> </div>
+      <div className="superhero-central"><h1> SUPERHERO CENTRAL</h1></div>
+      <div className="emptyspace"> </div>
 
-      <button onClick={handleAddNewCharacterClick}> ADD NEW CHARACTER </button>
-      <CharacterList characters={characters} handleEditCharacter={handleEditCharacter} />
+      <div className="buttonbacking">
+      <div className="nav-buttons"> 
+        <button>BIOGRAPHIES</button>
+        <button>ARENA</button>  
+        <button>HOME</button>
+        <button>FAN ART</button>
+        <button> CONTACT US</button>
+
+      </div>
+      </div>
+      <div className="emptyspace"> </div>
+      <button onClick={handleAddNewCharacterClick}> 
+      ADD NEW CHARACTER </button>
+      <CharacterList characters={characters} handleEditCharacter={handleEditCharacter} handleDeleteCharacter={handleDeleteCharacter} />
     
           <AddEditCharacterForm
             existingCharacter={currentCharacter}
             handleCreateCharacter={handleCreateCharacter}
             handleUpdateCharacter={handleUpdateCharacter}
+            handleDeleteCharacter={handleDeleteCharacter}
           />
-      
+      <br></br>
     </div>
   );
 }
