@@ -1,8 +1,8 @@
 import axios from "axios";
 
 //URL for our Node Express APP running locally
-// const BASE_URL = "http://localhost:3005";
-const BASE_URL = "https://superhero-hub.herokuapp.com";
+const BASE_URL = "http://localhost:3005";
+//const BASE_URL = "https://superhero-hub.herokuapp.com";
 const getCharacters = ()=> {
     return axios.get(`${BASE_URL}/api/characters`);
 };
