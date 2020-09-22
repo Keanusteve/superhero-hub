@@ -83,9 +83,11 @@ function App() {
     //CharacterList is creating an instance of character list
 
     <div className="App">
+      <body className="body" > 
      
-      <div className="emptyspace"> </div>
-      <div className="superhero-central"><h1> SUPERHERO CENTRAL</h1></div>
+      <div className="emptyspace">
+        <img src="" alt=""/> </div>
+      <div className="superhero-central"><h1>SUPERHERO CENTRAL</h1></div>
       <div className="emptyspace"> </div>
 
       <div className="buttonbacking">
@@ -94,12 +96,12 @@ function App() {
         <button>ARENA</button>  
         <button>HOME</button>
         <button>FAN ART</button>
-        <button> CONTACT US</button>
+        <button>CONTACT US</button>
 
       </div>
       </div>
       <div className="emptyspace"> </div>
-      <button onClick={handleAddNewCharacterClick}> 
+      <button onClick={handleAddNewCharacterClick} > 
       ADD NEW CHARACTER </button>
       <CharacterList characters={characters} handleEditCharacter={handleEditCharacter} handleDeleteCharacter={handleDeleteCharacter} />
     
@@ -110,6 +112,7 @@ function App() {
             handleDeleteCharacter={handleDeleteCharacter}
           />
       <br></br>
+      </body>
     </div>
   );
 }

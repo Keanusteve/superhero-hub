@@ -12,7 +12,7 @@ function Character({ characterInfo, handleEditCharacter, handleDeleteCharacter})
             onError={(e) => (e.target.src ="./place-holder.jpg" )}
             className="character-image"/>
             
-            <div className="character-info-label">Name: {characterInfo.name}</div><br/>
+            <div className="character-info-label" >Name: {characterInfo.name}</div><br/>
             <div className="character-info-label">Strength Level: {characterInfo.strength}</div><br/>
             <div className="character-info-label">Durability: {characterInfo.durability}</div><br/>
             <div className="character-info-label">Speed: {characterInfo.speed}</div><br/>
@@ -27,7 +27,7 @@ function Character({ characterInfo, handleEditCharacter, handleDeleteCharacter})
                 EDIT </button>
             <button onClick={()=> handleDeleteCharacter(characterInfo)}>
                 DELETE</button>
-            
+            <a href="#edit"></a>
             
         </div>
     )

@@ -139,6 +139,8 @@ function AddEditCharacterForm({
     <div>
       <h1>{existingCharacter ? "Edit Character" : "Add Character"}</h1>
       <form onSubmit={handleSubmit} className="character-form">
+
+          <h1> CREATE NEW CHARACTER</h1>
         <span className="required">*</span>
         <label htmlFor="Name">
           Name

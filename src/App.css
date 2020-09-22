@@ -25,6 +25,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.body{
+  background-color: black;
+}
 
 .nav-buttons{
   display: flex;
@@ -32,8 +35,18 @@
   justify-content: space-around;
   border-style: solid 1px black;
   height: 60px;
-  color: red;
+  
 }
+
+.buttonbacking {
+  flex-direction: column;
+  border-style: solid 1px black;
+  height: 60px;
+  color: #282c34;
+  background-color:#282c34;
+  pointer-events: stroke;
+  
+  }
   
 
 .superhero-central {
@@ -42,6 +55,7 @@
   justify-content: space-around;
   border-style: solid 1px black;  
   height: 60px;
+  color: aliceblue;
   
 }
 .emptyspace{
@@ -51,16 +65,9 @@ height:20px;
 
 .App-link {
   color: #61dafb;
-
-
-}.buttonbacking {
-flex-direction: column;
-border-style: solid 1px black;
-height: 60px;
-color: red;
-background-color: red;
-pointer-events: stroke;
 }
+
+
 
 .background-image{
   background-image: url(../src/feature_marvelVSDC.jpg);
